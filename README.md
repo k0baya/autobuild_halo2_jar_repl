@@ -1,4 +1,5 @@
 # autobuild_halo2_repl
+This repo can autobuild the latest release version halo2 jar file on replit and offer a web that due to download the jar file.
 ## usage
 ### Tamplate：**node.js**
 The personal free plan have only 512mb RAM that **can't** run this. You have to use the Boosted Repls or team plan.
