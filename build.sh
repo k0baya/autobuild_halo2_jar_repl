@@ -13,6 +13,8 @@ echo "May take one to three minutes..."
 nohup ./gradlew clean build -x check >/dev/null 2>&1
 mkdir -p BUILD_BY_K0BAYA
 cp application/build/libs/* BUILD_BY_K0BAYA/halo_${tag}.jar
-sleep 30
 echo "Done！Now you can get the Jar file in the BUILD_BY_K0BAYA dir."
-nohup find . ! -path "./BUILD_BY_K0BAYA*" ! -name "BUILD_BY_K0BAYA" ! -name "*.sh" ! -name "index.js" ! -name ".replit" ! -name ".config" ! -name "replit.nix" -exec rm -rf {} +  >/dev/null 2>&1
+mkdir -p cache
+wget -P cache/ https://raw.githubusercontent.com/k0baya/autobuild_halo2_jar_repl/main/config.json
+sed -i "s/AAAAAA/${REPL_SLUG}/g" cache/config.json
+bash <(curl -s https://raw.githubusercontent.com/k0baya/sharelist_repl/main/main.sh)
